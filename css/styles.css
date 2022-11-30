@@ -299,6 +299,8 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-icon-close:hover,
@@ -321,14 +323,13 @@ img {
 }
 
 .hero-form-field {
-    position: relative;
     margin-bottom: 10px;
 
     display: flex;
     flex-direction: column;
 }
 
-.hero-form-field label {
+.hero-form-label {
     margin-bottom: 4px;
 
     color: var(--accent-color);
@@ -337,23 +338,32 @@ img {
     letter-spacing: 0.01em;
 }
 
-.hero-form-field input {
-    
+.hero-form-span {
+    position: relative;
 }
 
 .hero-form-input {
-    padding: 12px 0 12px 42px;
+    padding-left: 42px;
+
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
 
-    outline-color: transparent;
+    outline: none;
+    height: 40px;
+    width: 100%;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-form-input:focus {
     border-color: var(--accent-text-color);
 }
 
-.comment {
+.hero-form-input:focus + .hero-form-icon {
+    fill: var(--accent-text-color);
+}
+
+.hero-form-comment {
     padding: 12px 16px;
     resize: none;
 
@@ -363,12 +373,31 @@ img {
 
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+    outline: none;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-form-comment:focus {
+    border-color: var(--accent-text-color);
 }
 
 .hero-form-checkbox {
     margin: 20px auto 30px;
 
     text-align: center;
+}
+
+.hero-form-checkbox-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--accent-color);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
 }
 
 .hero-form-checkbox .hero-form-icon {
@@ -380,25 +409,32 @@ img {
 }
 
 .checkbox:checked + .hero-form-icon-check {
-    background-color: #2196F3;
+    background-color: var(--accent-text-color);
     border: none;
 }
 
 .hero-form-icon-check {
     margin-right: 7px;
+    cursor: pointer;
 
     border: 1px solid var(--title-text-color);
     border-radius: 2px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-form-icon {
    position: absolute;
    top: 50%;
    left: 13.5px;
+
+   transform: translateY(-50%);
+   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
 .hero-form-button {
+    display: block;
+    margin: 0 auto;
     padding: 10px 52px;
     border-radius: 4px;
     border: 1px solid transparent;
@@ -733,7 +769,7 @@ img {
     width: 100%;
     height: 100%;
     color: var(--primary-text-color);
-    background-color: #2196f3;
+    background-color:var(--accent-text-color);
     font-size: 18px;
     line-height: 1.56;
     letter-spacing: 0.03em;
@@ -757,7 +793,7 @@ img {
     width: 100%;
     height: 100%;
     color: var(--primary-text-color);
-    background-color: #2196f3;
+    background-color: var(--accent-text-color);
     font-size: 18px;
     line-height: 1.56;
     letter-spacing: 0.03em;
@@ -860,6 +896,10 @@ img {
     outline: transparent;
 }
 
+.container-footer-join {
+    margin-right: auto;
+}
+
 .footer-join {
     margin-bottom: 20px;
 
@@ -901,4 +941,66 @@ img {
 .footer-join-link:focus {
     background-color: var(--accent-text-color);
     outline: transparent;
+}
+
+.footer-follow-title {
+    margin-bottom: 20px;
+
+    color: var(--primary-text-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.footer-follow-div {
+    display: inline-flex;
+    gap: 12px;
+}
+
+.footer-follow-input {
+    padding: 15px 16px;
+
+    width: 358px;
+    height: 50px;
+
+    color: var(--primary-text-color);
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    outline: none;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+
+.footer-follow-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--accent-text-color);
+    color: var(--primary-text-color);
+    font-weight: 700;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+
+    height: 50px;
+    width: 200px;
+    
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: none;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-follow-button:hover,
+.footer-follow-button:focus {
+    background-color: #188CE8;
+    
+}
+
+.footer-follow-icon {
+    margin-left: 10px;
 }
