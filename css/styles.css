@@ -338,9 +338,19 @@ img {
 }
 
 .hero-form-field input {
+    
+}
+
+.hero-form-input {
     padding: 12px 0 12px 42px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+
+    outline-color: transparent;
+}
+
+.hero-form-input:focus {
+    border-color: var(--accent-text-color);
 }
 
 .comment {
@@ -355,34 +365,38 @@ img {
     border-radius: 4px;
 }
 
-.hero-form-agreement {
+.hero-form-checkbox {
     margin: 20px auto 30px;
 
     text-align: center;
 }
 
-.hero-form-agreement .hero-form-icon {
+.hero-form-checkbox .hero-form-icon {
     fill: var(--accent-text-color);
 }
 
-.hero-form-icon {
-   position: absolute;
-   top: 30px;
-   left: 13.5px;
+.checkbox {
+    appearance: none;
+}
 
-
+.checkbox:checked + .hero-form-icon-check {
+    background-color: #2196F3;
+    border: none;
 }
 
 .hero-form-icon-check {
+    margin-right: 7px;
+
     border: 1px solid var(--title-text-color);
     border-radius: 2px;
 }
 
-.hero-form-icon-check:hover,
-.hero-form-icon-check:focus {
-    background-color: #2196F3;
-    border: none;
+.hero-form-icon {
+   position: absolute;
+   top: 50%;
+   left: 13.5px;
 }
+
 
 .hero-form-button {
     padding: 10px 52px;
@@ -404,6 +418,10 @@ img {
 .hero-form-button:hover,
 .hero-form-button:focus {
     background-color: #188CE8;
+}
+
+.hero-form-link {
+    color: var(--accent-text-color);
 }
 
 /* FEATURES */
